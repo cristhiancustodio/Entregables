@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="estilo.css">
+    <title>PIZZERIA</title>
+</head>
+<body>
+    <div class="container">
+        <div class="registro">
+            <form action="tarea.php" method="POST" class="registro_datos" name="pedido">
+                <h1>INGRESA TUS DATOS </h1>
+                <p>Nombre: </p><input type="text" name="txtnombre" ><br>
+                <p>Apellido: </p><input type="text" name="txtapellido"><br>
+                <p>DNI: </p><input type="text" name="txtdni"><br>
+                <p>Celular: </p><input type="text" name="txtcelular"><br>
+                <p>Email: </p><input type="email" name="txtcorreo"><br>
+                <p>Dirección: </p><input type="text" name="txtdireccion"><br>   
+        </div>
+        <h2 id="title">Elije tu pizza</h2 >
+        <div class="pedidos">
+            <div class="pizzas">
+                <h3>Pizzas</h3>
+                <input type="radio" id="hawaiana" name="pedido[]" value="Hawaiana " onchange="mostrar()">
+                <label for="hawaiana">Hawaiana </label><br>
+                <input type="radio" id="americana" name="pedido[]" value="Americana " onchange="mostrar()">
+                <label for="americana">Americana </label><br>
+                <input type="radio" id="peperoni" name="pedido[]" value="Peperoni  " onchange="mostrar()">
+                <label for="peperoni">Peperoni  </label> <br>
+                <input type="radio" id="mozzarella" name="pedido[]" value="Mozzarella Extra Cheesee" oninput="mostrar()">
+                <label for="mozzarella">Mozzarella Extra Cheesee  </label><br>
+                <input type="radio" id="siciliana" name="pedido[]" value="Siciliana " onchange="mostrar()">
+                <label for="siciliana">Siciliana </label><br>
+                <input type="radio" id="primavera" name="pedido[]" value="Primavera  "onchange="mostrar()"> 
+                <label for="primavera">Primavera</label><br> 
+            </div>   
+            <div class="tamaño">
+                <h3>Elegir tamaño</h3>
+                <input type="radio" id="mediana" name="porciones" value="Mediana 6 porciones" onchange="opcion1()">
+                <label for="mediana">Mediana 6 porciones (s/ 12.90)</label><br>
+                <input type="radio" id="familiar" name="porciones" value="Familiar 8 porciones" onchange="opcion2()">
+                <label for="familiar">Familiar 8 porciones (s/23.90)</label><br>
+                <input type="radio" id="gigante" name="porciones" value="Gigante 12 porciones" onchange="opcion3()">
+                <label for="gigante">Gigante 12 porciones (s/29.90)</label><br>
+            </div>
+            <div class="cantidad">
+                <h3>Cantidad</h3>
+                <input type="number" value=1 name="cantidad1" id="cantidad" oninput="calculo1()">
+                
+            </div>
+    </div>
+            <div class="adicionales">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Adicionar complementos
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <label for="1">Pepsi 1Lt s/3.50</label>
+                                <input type="checkbox" id="1"  name="eleccion1" value="Pepsi 1lt" onclick="op1()"><br>
+                                <label for="2">Pepsi 2.25Lts s/6.00</label>
+                                <input type="checkbox" id="2"  name="eleccion2" value="Pepsi 2.25lt" onclick="op2()"><br>
+                                <label for="3">Pan al ajo simple s/3.00</label>
+                                <input type="checkbox" id="3"  name="eleccion3" value="Pan al ajo simple" onclick="op3()"><br>
+                                <label for="4">Pan al ajo especial s/4.00</label>
+                                <input type="checkbox" id="4"  name="eleccion4" value="Pan al ajo especial" onclick="op4()"><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="costo">
+                        <h3>
+                            Precio del pedido: <p id="total" value="total"> </p>
+                        </h3>
+                    </div> 
+                </div> 
+            </div>
+            
+            <div class="boton">
+                <input id="boton"type="submit" value="Registrar pedido" name="btnregistrar" onclick="registro()">
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

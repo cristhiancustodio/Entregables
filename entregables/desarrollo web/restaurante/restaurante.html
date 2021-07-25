@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>RESTAURANTE</title>
+</head>
+<body>
+    <style>
+        *{
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            background-color: #E7D6D6;
+        }
+        h1,h3{
+            color: #7C1313;
+        }
+        .registro{
+            display: flex;
+            margin: 70px;
+        }
+        form{
+            width: 50%;
+            margin-left:80px ;
+        }
+        .platos{
+            width: 50%;
+        }
+        .platos li{
+            list-style: none;
+            line-height: 30px;
+        }
+        input{
+            border:  none;
+            border-bottom: 1px solid grey;
+        }
+        #boton{
+            border: 1px solid #4F0909;
+            border-radius: 5px;
+            width: 150px;
+            background-color: #7C1313;
+            color: #fff;
+            text-align: center;
+            height: 30px;
+            font-size: 1em;
+            margin: 30px 50px;
+        }
+    </style>
+    <div class="registro">
+    <form action="restaurante.php" method="POST" class="registro_datos">
+        <h1>REGISTRO DE PLATOS</h1>
+        <p>Nombre del cliente: </p><input type="text" name="txtnombre" required><br>
+        <p>DNI:</p><input type="text" name="txtdni" required><br>
+        <p>INGRESE PLATO A PEDIR</p><input type="text" name="txtplato" required><br>
+        <p>INGRESA BEBIDA</p><input type="text" name="txtbebida"><br>
+        <input id="boton"  type="submit" value="Registrar" name="btnregistrar">
+    </form>
+    <div class="platos">
+        <ul>
+            <h3>PLATOS A LA CARTA</h3>
+            <input type="number" name="" id="valor" oninput="calcular()">
+            <li>Lomo Saltado</li>
+            <li>Arroz con pollo</li>
+            <li>Aji de gallina</li>
+            <li>Tallarines rojos</li>
+            <li>Arroz con mariscos</li>
+            <li>Pollo a la brasa</li>
+        </ul>
+        <div>
+            <p id="mostrar"></p>
+        </div>
+    <div class="bebidas">
+        <ul>
+            <h3>BEBIDAS</h3>
+            <li>Gaseosa</li>
+            <li>Chicha Morada</li>
+            <li>Cerveza</li>
+            <li>Pisco Sour</li>
+        </ul>
+    </div>
+    </div>
+    </div>
+    <a href="restaurante.php">VER PEDIDOS</a>
+    <script>
+        function calcular(){
+            let a=document.getElementById("valor").value;
+            document.getElementById("mostrar").innerHTML=a;
+        }
+    </script>
+</body>
+</html>

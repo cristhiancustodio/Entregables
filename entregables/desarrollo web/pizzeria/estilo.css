@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: century gothic;
+}
+body{
+    margin: 50px 0;
+}
+
+.registro{
+    width: 100%;
+}
+
+.registro form{
+    margin-left: 80px;
+    width: 100%;
+    margin-bottom: 70px;
+}
+h1{
+    text-align: center;
+    
+}
+p{ 
+    margin: 8px;
+    padding: 10px;
+}
+#title{
+    text-align: center;
+    margin-bottom: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #E2E2E3;
+}
+.registro_datos input{
+    width: 250px;
+    height: 20px;
+    border: none;
+    border-bottom: 0.1em solid #BDBFC1;
+    text-align:left;
+    margin-left: 50px;
+    font-size: 1em;
+}
+.pedidos{
+    width: 100%;
+    margin-left: 150px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    float: right;
+    display:flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #E2E2E3;
+}
+.pedidos input,label{
+    margin: 10px ;
+}
+.pizzas{
+    margin-left: 15px;
+    width: 33%;
+}
+.tamaño{
+    width: 33%;
+}
+.cantidad{
+    margin-right: 15px;
+    width: 20%;
+}
+.cantidad input{
+    text-align: center;
+    width: 100px;
+}
+.cantidad p{
+    display: inline;
+}
+
+.adicionales{
+    margin-top: 150px;
+}
+.accordion-item{
+    display: inline-block;
+    width: 600px; 
+}
+.accordion-body input{
+    float: right;
+    margin-right: 10px;
+}
+.costo{
+    margin-right: 100px;
+    float: right    ;
+}
+.costo p{
+    display: inline-block;
+}
+.boton{
+    display: inline;
+    float: center;
+}
+.boton input{
+    border: 1px solid #276AE7;
+    border-radius: 5px;
+    background-color:#276AE7 ;
+    color: #fff;
+    text-align: center;
+    height: 50px;
+    width: 200px;
+    font-size: 1.2em;
+    margin-top: 30px;   
+}
